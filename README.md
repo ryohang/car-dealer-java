@@ -1,6 +1,6 @@
 ### Install dependency
 ##### pre-requisite: install java 8
-    brew install pipenv
+    depends on OS
 #### dependency
 	mvn compile package
 
