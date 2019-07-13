@@ -17,12 +17,13 @@ import java.util.Optional;
  */
 @RestController
 @RequestMapping(value = "/api/cars", produces = MediaType.APPLICATION_JSON_VALUE)
+@CrossOrigin(value = "*")
 public class CarController {
-
     @Autowired
     private CarService carService;
 
     @RequestMapping(method = RequestMethod.POST)
+
     public Car generateCar(@RequestBody Car car) {
         return carService.save(car);
     }
