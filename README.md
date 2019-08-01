@@ -15,3 +15,7 @@
 ### Run Application
     mvn clean compile package -DskipTests=true && java -jar target/car-dealer-0.0.1-SNAPSHOT.war --spring.datasource.url=${url} --spring.datasource.username=${username} --spring.datasource.password=${password}
     mvn clean compile package -DskipTests=true && java -jar target/car-dealer-0.0.1-SNAPSHOT.war --spring.datasource.url=jdbc:postgresql://localhost:5432/dealer_dev --spring.datasource.username=admin --spring.datasource.password=password123
+    
+    
+    
+    AAA
