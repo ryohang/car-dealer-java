@@ -1,5 +1,6 @@
 package edu.ascending.training.car.control;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import edu.ascending.training.car.domain.Car;
 import edu.ascending.training.car.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,7 @@ public class CarController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
+    @JsonView(Car.Basic.class)
     public List<Car> getCarList() {
         Iterable<Car> iterable = carService.findAll();
         List<Car> list = new ArrayList<>();

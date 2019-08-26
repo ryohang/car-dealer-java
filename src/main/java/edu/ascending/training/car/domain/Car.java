@@ -1,11 +1,8 @@
 package edu.ascending.training.car.domain;
 
 import com.fasterxml.jackson.annotation.JsonView;
-
 import javax.persistence.*;
-
 import java.io.Serializable;
-
 import static javax.persistence.GenerationType.SEQUENCE;
 
 /**
@@ -14,13 +11,19 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @Entity
 @Table(name="cars")
 public class Car implements Serializable {
+    public interface AnotherBasic {};
+    public interface Basic{};
+    public interface  Advance extends Basic {};
     @Id
     @GeneratedValue(strategy=SEQUENCE, generator="cars_id_seq")
     @SequenceGenerator(name="cars_id_seq", sequenceName="cars_id_seq", allocationSize=1)
+    @JsonView({Basic.class})
     private Long id;
 
+    @JsonView({Basic.class,AnotherBasic.class})
     @Column(name = "brand")
     private String brand;
+    @JsonView(Advance.class)
     @Column(name = "model")
     private String model;
 
