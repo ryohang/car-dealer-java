@@ -30,7 +30,7 @@ public class CarController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    @JsonView(Car.Basic.class)
+    // @JsonView(Car.Basic.class)
     public List<Car> getCarList() {
         Iterable<Car> iterable = carService.findAll();
         List<Car> list = new ArrayList<>();
