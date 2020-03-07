@@ -1,3 +1,4 @@
+startup.sh
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 .DS_Store
